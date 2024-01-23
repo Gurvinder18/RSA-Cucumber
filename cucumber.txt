@@ -1,0 +1,47 @@
+Gherkin - Bussiness readable, domain specific language
+Keywords: Scenario(TC), Feature, Feature file, Scenario outline, Step definition
+
+Scenario: is just a TC
+GIVEN precondition
+When purpose
+Then expected output
+And other expected output/ other when statement or given statement
+BUT is for error messages maybe
+
+Feature: represents bussiness requirement
+
+Feature.file has .feature extension with the scenarios in them
+
+Scenario outline: runs a single test n number of times as per the provided parameters
+just put Examples: after test with all the data
+
+for each step in the feature file we had to write the corresponding code in 
+stepdefinitons.java file
+
+TestRunner is used to run - TestNG/Junit
+
+sencha.js - next.js
+
+
+Files hierarchy:
+Project
+|-src/main/java
+|-src/main/resources
+|-src/test/java
+	|-features(package)
+		|-Firstfeaturefile.feature(has the gherkin code)
+		|-secondfeaturefile.feature
+	|-cucumberOptions
+		|-TestNGRunnerfile.java(executes our feature files)
+	|-stepDefinitions
+		|-hooks.java(has setup & tear down or other smaller setups/teardowns
+which might not be for all uses tags to achieve it)
+		|-mainsteps.java(has the code for each step in gherkin code)
+|-src
+
+
+
+Re-usability: just repeat steps used/coded before. Also include parameterizarion to help
+diversity. 
+
+Hooks: contain re-usable code like setup and tear down
